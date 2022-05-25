@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import "./App.scss";
 import App from "./App.jsx";
 import store from "./states/store";
+import "./custom.css";
 
 ReactDOMClient.createRoot(document.getElementById("root")).render(
   <Provider store={store}>

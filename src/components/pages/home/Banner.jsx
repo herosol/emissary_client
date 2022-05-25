@@ -1,35 +1,46 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Heading from "../../common/Heading";
+import Text from "../../common/Text";
+import { getUploadsUrl } from "../../../helpers/helpers";
 
-function Banner({ data }) {
+function Banner({ content }) {
   return (
     <>
       <section id="banner">
         <div className="contain">
           <div className="flex_blk">
             <div className="content text-center">
-              <Heading className="fancy" size={1} text={data.heading} />
-              <p>{data.para}</p>
+              <Heading
+                className="fancy"
+                size={1}
+                text={<Text string={content.banner_heading} />}
+              />
+              <p>
+                <Text string={content.banner_detail} />
+              </p>
               <div className="btn_blk">
                 <Link
-                  to={data.btn_link_01}
+                  to={content.banner_button_link_left}
                   className="site_btn lg simple round block_sm"
                 >
-                  {data.btn_01}
+                  {content.banner_button_text_left}
                 </Link>
                 <Link
-                  to={data.btn_link_02}
+                  to={content.banner_button_link_right}
                   className="site_btn lg round block_sm"
                 >
-                  {data.btn_02}
+                  {content.banner_button_text_right}
                 </Link>
               </div>
             </div>
           </div>
         </div>
         <video autoPlay loop muted playsInline>
-          <source src={data.video} type="video/mp4" />
+          <source
+            src={getUploadsUrl("images", content.video)}
+            type="video/mp4"
+          />
         </video>
       </section>
     </>

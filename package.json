@@ -9,6 +9,7 @@
     "axios": "^0.27.2",
     "axios-progress-bar": "^1.2.0",
     "html-react-parser": "^1.4.12",
+    "lodash": "^4.17.21",
     "moment": "^2.29.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

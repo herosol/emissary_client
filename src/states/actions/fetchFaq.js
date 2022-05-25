@@ -1,27 +1,27 @@
 import http from "../../helpers/http";
 
 import {
-  FETCH_CONTENT,
-  FETCH_CONTENT_SUCCESS,
-  FETCH_CONTENT_FAILED
+  FETCH_FAQ_CONTENT,
+  FETCH_FAQ_CONTENT_SUCCESS,
+  FETCH_FAQ_CONTENT_FAILED
 } from "./actionTypes";
 
-export const fetchData = (path) => (dispatch) => {
+export const fetchFaq = (path) => (dispatch) => {
   dispatch({
-    type: FETCH_CONTENT,
+    type: FETCH_FAQ_CONTENT,
     payload: null
   });
   http
     .get(path)
     .then(({ data }) => {
       dispatch({
-        type: FETCH_CONTENT_SUCCESS,
+        type: FETCH_FAQ_CONTENT_SUCCESS,
         payload: data
       });
     })
     .catch((error) => {
       dispatch({
-        type: FETCH_CONTENT_FAILED,
+        type: FETCH_FAQ_CONTENT_FAILED,
         payload: error
       });
     });

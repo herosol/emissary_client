@@ -52,9 +52,13 @@ function App() {
             />
             {/* <Route exact path="/services" element={<Services />} /> */}
             {/* <Route exact path="/services/service-detail" element={<ServiceDetail />} /> */}
-            <Route exact path="/blog" element={<Blog />} />
+            <Route exact path="/blog/:id" element={<Blog />} />
             <Route exact path="/jobs" element={<Jobs />} />
-            <Route exact path="/blog/blog-detail" element={<BlogDetail />} />
+            <Route
+              exact
+              path="/blog/blog-detail/:id"
+              element={<BlogDetail />}
+            />
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/faq" element={<Faq />} />
             <Route exact path="/pricing" element={<Pricing />} />

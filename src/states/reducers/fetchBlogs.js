@@ -1,7 +1,7 @@
 import {
-  FETCH_CONTENT,
-  FETCH_CONTENT_SUCCESS,
-  FETCH_CONTENT_FAILED
+  FETCH_BLOGS_CONTENT,
+  FETCH_BLOGS_CONTENT_SUCCESS,
+  FETCH_BLOGS_CONTENT_FAILED
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -12,19 +12,19 @@ const initialState = {
 
 export default function (state = initialState, { type, payload }) {
   switch (type) {
-    case FETCH_CONTENT:
+    case FETCH_BLOGS_CONTENT:
       return {
         ...state,
         isLoading: true,
         content: {}
       };
-    case FETCH_CONTENT_SUCCESS:
+    case FETCH_BLOGS_CONTENT_SUCCESS:
       return {
         ...state,
         isLoading: false,
         content: payload
       };
-    case FETCH_CONTENT_FAILED:
+    case FETCH_BLOGS_CONTENT_FAILED:
       return {
         ...state,
         isLoading: false,
