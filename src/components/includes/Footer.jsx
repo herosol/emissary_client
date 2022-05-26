@@ -3,8 +3,18 @@ import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import Newsletter from "./Newsletter";
 import SocialLinks from "./SocialLinks";
-
+import { subsNewsletter } from "../../states/actions/subsNewsletter";
+import { useSelector, useDispatch } from "react-redux";
 function Footer() {
+  const dispatch = useDispatch();
+  const isFormProcessing = useSelector(
+    (state) => state.subsNewsletter.isFormProcessing
+  );
+  const subsNewsletterForm = (post) => {
+    console.log(post);
+    dispatch(subsNewsletter(post));
+  };
+
   const data = {
     list_01: [
       {
@@ -81,7 +91,10 @@ function Footer() {
             </div>
             <div className="col col3">
               <div className="in_col">
-                <Newsletter />
+                <Newsletter
+                  subsNewsletterForm={subsNewsletterForm}
+                  isFormProcessing={isFormProcessing}
+                />
               </div>
             </div>
           </div>

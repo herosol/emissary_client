@@ -8,6 +8,7 @@ import Footer from "./components/includes/Footer";
 import Home from "./components/pages/home/Index";
 import About from "./components/pages/about/Index";
 import Jobs from "./components/pages/jobs/Index";
+import JobDetail from "./components/pages/job_detail/Index";
 import Blog from "./components/pages/blog/Index";
 import BlogDetail from "./components/pages/blog_detail/Index";
 import Contact from "./components/pages/contact/Index";
@@ -20,6 +21,8 @@ import Terms from "./components/pages/terms/Index";
 // Error Pages & Popups
 import Error from "./components/pages/error/Index";
 import PopupVideo from "./components/common/PopupVideo";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [state, setState] = useState({
@@ -54,6 +57,7 @@ function App() {
             {/* <Route exact path="/services/service-detail" element={<ServiceDetail />} /> */}
             <Route exact path="/blog/:id" element={<Blog />} />
             <Route exact path="/jobs" element={<Jobs />} />
+            <Route exact path="/job/job-detail/:id" element={<JobDetail />} />
             <Route
               exact
               path="/blog/blog-detail/:id"

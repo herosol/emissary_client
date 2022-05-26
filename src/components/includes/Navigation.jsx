@@ -25,7 +25,15 @@ function Navigation({ active, toggle }) {
                 About
               </NavLink>
             </li>
-
+            <li>
+              <NavLink
+                to="/jobs"
+                className={({ isActive }) => (isActive ? "active" : "")}
+                onClick={toggle}
+              >
+                Jobs
+              </NavLink>
+            </li>
             {/* <li>
 								<NavLink to="/solutions" className={({ isActive }) => (isActive ? "active" : "")} onClick={toggle}>
 									Solutions
@@ -43,6 +51,15 @@ function Navigation({ active, toggle }) {
 									Sign in
 								</NavLink>
 							</li> */}
+            <li>
+              <Link
+                to="/contact"
+                className="site_btn long round"
+                onClick={toggle}
+              >
+                Contact us
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

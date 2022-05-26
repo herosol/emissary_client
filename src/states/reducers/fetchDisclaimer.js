@@ -1,7 +1,7 @@
 import {
-  FETCH_TERMS_CONTENT,
-  FETCH_TERMS_CONTENT_SUCCESS,
-  FETCH_TERMS_CONTENT_FAILED
+  FETCH_DISCLAIMER_CONTENT,
+  FETCH_DISCLAIMER_CONTENT_SUCCESS,
+  FETCH_DISCLAIMER_CONTENT_FAILED
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -12,19 +12,19 @@ const initialState = {
 
 export default function (state = initialState, { type, payload }) {
   switch (type) {
-    case FETCH_TERMS_CONTENT:
+    case FETCH_DISCLAIMER_CONTENT:
       return {
         ...state,
         isLoading: true,
         content: {}
       };
-    case FETCH_TERMS_CONTENT_SUCCESS:
+    case FETCH_DISCLAIMER_CONTENT_SUCCESS:
       return {
         ...state,
         isLoading: false,
         content: payload
       };
-    case FETCH_TERMS_CONTENT_FAILED:
+    case FETCH_DISCLAIMER_CONTENT_FAILED:
       return {
         ...state,
         isLoading: false,

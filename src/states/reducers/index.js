@@ -8,6 +8,10 @@ import fetchDisclaimer from "./fetchDisclaimer";
 import fetchAbout from "./fetchAbout";
 import fetchBlogDetail from "./fetchBlogDetail";
 import fetchFaq from "./fetchFaq";
+import fetchJobs from "./fetchJobs";
+import fetchContactUs from "./fetchContactUs";
+import subsNewsletter from "./subsNewsletter";
+import fetchJobDetail from "./fetchJobDetail";
 
 export default combineReducers({
   fetchData,
@@ -18,5 +22,9 @@ export default combineReducers({
   fetchDisclaimer,
   fetchAbout,
   fetchBlogDetail,
-  fetchFaq
+  fetchFaq,
+  fetchJobs,
+  fetchContactUs,
+  subsNewsletter,
+  fetchJobDetail
 });

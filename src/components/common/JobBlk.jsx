@@ -1,47 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Text from "./Text";
+import * as helpers from "../../helpers/helpers";
 
-const JobBlk = ({
-  src,
-  alt,
-  title,
-  para,
-  link,
-  date,
-  experience,
-  location,
-  salary,
-  company,
-  company_link,
-  act_btn
-}) => {
+const JobBlk = (job) => {
   return (
     <>
       <div className="job_blk">
         <div className="top">
           <div className="title">
             <h5>
-              <Link to={link}>{title}</Link>
+              <Link to={`/job/job-detail/${job.id}`}>{job.title}</Link>
             </h5>
-            <p>{para}</p>
+            <Text string={job.description} parse={true} length={150} />
             <ul className="mini_lst">
               <li>
-                <span>Post Data:</span> {date}
+                <span>Post Data:</span>{" "}
+                {helpers.blogsDateFormat(job.created_date)}
               </li>
               <li>
-                <span>Experience:</span> {experience}
+                <span>Experience:</span>{" "}
+                {job.years_of_experience == 10
+                  ? "10+"
+                  : job.years_of_experience}{" "}
+                Year(s)
               </li>
               <li>
-                <span>Location:</span> {location}
+                <span>Location:</span> {job.city}
               </li>
               <li>
-                <span>Salary:</span> {salary}
+                <span>Salary:</span> {job.min_salary}K - {job.max_salary}K
               </li>
             </ul>
           </div>
           <div className="act_btn">
-            <Link to="?" className="site_btn sm">
-              {act_btn.view}
+            <Link to={`/job/job-detail/${job.id}`} className="site_btn sm">
+              View Detail
             </Link>
           </div>
         </div>
